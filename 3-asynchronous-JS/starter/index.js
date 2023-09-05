@@ -68,7 +68,27 @@ const getDogPic = async () => {
     console.log('Random doggo image saved to file!');
   } catch (error) {
     console.log(error);
+    throw err;
   }
+  return '2: Ready ❤️';
 };
+// console.log('1: Will get dog pics');
+// getDogPic()
+//   .then((x) => {
+//     console.log(x);
+//     console.log('3: Done getting dog pics');
+//   })
+//   .catch((err) => {
+//     console.log('ERROR 💥');
+//   });
 
-getDogPic();
+(async () => {
+  try {
+    console.log('1: Will get dog pics');
+    const x = await getDogPic();
+    console.log(x);
+    console.log('3: Done getting dog pics');
+  } catch (error) {
+    console.log('ERROR 💥');
+  }
+})();
